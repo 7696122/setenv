@@ -3,6 +3,7 @@ Function Install-Scoop {
     irm get.scoop.sh | iex
 }
 
+# https://dev.to/scarktt/installing-doom-emacs-on-windows-23ja
 Function Dependent-Doom {
     scoop install git
     scoop install ripgrep
