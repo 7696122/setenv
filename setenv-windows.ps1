@@ -3,14 +3,28 @@ Function Install-Scoop {
     irm get.scoop.sh | iex
 }
 
+Function Dependent-Doom {
+    scoop install git
+    scoop install ripgrep
+    scoop install fd
+}
+
+Function Install-Doom-Emacs {
+    git clone https://github.com/hlissner/doom-emacs .emacs.d
+    ~/.emacs.d/bin/doom install
+}
+
 Function Install-Emacs {
     scoop bucket add extras
     scoop install emacs
 }
 
 Function Set-Home {
+    #[System.Environment]::SetEnvironmentVariable('KEY','VALUE')
     [Environment]::SetEnvironmentVariable("HOME", $env:USERPROFILE, "User")
     $env:HOME
 }
 
-Set-Home
+#Set-Home
+Dependent-Doom
+#Install-Doom-Emacs
