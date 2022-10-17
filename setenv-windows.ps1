@@ -3,6 +3,10 @@ function Install-Scoop {
     irm get.scoop.sh | iex
 }
 
+function CapsLockToCtrl {
+    scoop install powertoys
+}
+
 # https://dev.to/scarktt/installing-doom-emacs-on-windows-23ja
 function Dependent-Doom {
     scoop install git
